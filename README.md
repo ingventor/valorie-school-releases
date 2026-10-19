@@ -1,36 +1,19 @@
-# Valorie School for Windows
+# MindAlign School for Windows
 
-Public distribution only: signed release metadata, Windows installers and the
-public verification key. Application source, teacher settings, credentials and
-school information are not published here.
+Formerly Valorie School. This repository contains only Windows installers, signed release metadata, the public verification key and release guidance. Application source, teacher settings, credentials and school information are private.
 
-## Pilot build
+## Current pilot
 
-0.3.0 and 0.3.1 are HOLD: their quiet mode also interrupted microphones.
-Do not install them on additional PCs. The newer 0.3.2 prerelease corrects
-output-only muting, retains the School open-book badge and preserves recovery
-state. It needs one school-approved Windows 11 x64 pilot, not immediate fleet
-rollout. Native microphone/output/expiry/recovery checks remain required.
-Existing 0.2.4/0.2.5 installations require a one-time administrator-approved
-bootstrap. The EXE includes its runtime, no GitHub login or SDK is needed.
-The 0.3.0 pilot needs an in-place 0.3.2 candidate upgrade for native testing.
-Do not uninstall first or remove its protected recovery backup.
+[MindAlign 0.3.3](https://github.com/ingventor/valorie-school-releases/releases/tag/v0.3.3) introduces the MindAlign app name, MindAlign.exe client, matching artwork and owned-shortcut migration. Normal downloads use MindAlign-0.3.3-Setup.exe. ValorieSchool-0.3.3-Setup.exe is an IDENTICAL compatibility alias for existing updater URL validation, not another application.
 
-The installer does not yet have Windows Authenticode publisher signing. IT must
-verify the downloaded SHA-256 against the signed candidate manifest, check the
-public key through the trusted master handoff, and approve the bootstrap.
-Do not bypass an unverified publisher prompt.
+Both files are 171809168 bytes, SHA-256 3ea0f598f80e89262bb2785acc85134dc39067ddcaf2d16c3b7b21cf82e64e41. Revision-5 candidate-legacy.json binds the old basename accepted through 0.3.2; candidate-mindalign.json binds the new basename. Root candidate.json uses the compatibility envelope. New clients accept only these exact versioned names in this repository. Do not trust a replacement key delivered alongside a binary; verify the previously pinned key through the master handoff.
+
+0.3.0 and 0.3.1 remain HOLD for their microphone interruption. 0.3.2 introduced output-only muting. Native microphone, full teacher-session expiry, reboot/sleep, upgrade and rollback acceptance remain required. Use one school-approved Windows 11 x64 pilot. Preserve protected recovery/code/deadline state, do not uninstall first. Old service/state identifiers remain for compatibility. The EXE includes its runtime; no GitHub login or SDK is needed on clients.
 
 ## Update channel
 
-Approved clients poll stable.json hourly or when Check for updates is pressed.
-Only signed, versioned, exact-hash installers are accepted. Active teacher
-sessions finish before installation. Unavailable or rejected updates retain
-the installed protection. Teacher access never disables permanent filtering.
+Approved clients poll stable.json hourly or on Check for updates. Only signed, versioned, exact-size/hash installers are accepted. Active teacher sessions finish before installation. Offline or rejected updates leave installed protection in place. Teacher access never disables permanent filtering.
 
-candidate.json is not an approved feed. stable.json is intentionally absent
-until the master reviews native installation, reboot, expiry, upgrade and
-rollback evidence. Publication/download is not proof of installation.
+candidate.json is NOT an approved feed. stable.json is intentionally absent pending native evidence review. The channel has no per-PC rollout targeting. This candidate has NOT been automatically installed by publication, and manual installation does not prove the automatic updater.
 
-The update signature verifies the release channel. It is not an Authenticode
-certificate or a claim of Windows SmartScreen reputation.
+The RSA update signature is NOT Windows Authenticode publisher signing or SmartScreen reputation. IT must verify the pinned key, signature, expiry and hash, run --check-package and approve the pilot. Stop on mismatches, missing recovery or protection/audio regressions. Do not bypass an unverified publisher prompt.

@@ -15,9 +15,11 @@ The versioned signed metadata and exact installer hashes are release assets.
 Root candidate.json is the latest compatibility envelope, not an active feed.
 The 0.3.5 API package parts are installer bytes only; their reconstructed size
 and SHA-256 must match the signed release. No client credentials are needed.
-Both stable.json and pilot.json remain absent pending the master-reviewed
-bootstrap checkpoint and explicit pilot activation. Manual installation does
-not prove button-driven delivery. No automatic or fleet update is claimed.
+October 20 activation: pilot.json now selects the signed 0.3.5 MindAlign build,
+revision 7, for administrator-opted-in pilot clients only. The Windows report
+confirms the 0.3.4 pilot bootstrap is healthy. Stable.json remains absent and
+fleet rollout is off. Actual button-driven installation and native acceptance
+still require Windows evidence. All existing protection stays on.
 
 ### Previous pilot
 

@@ -4,6 +4,23 @@ Formerly Valorie School. This repository contains only Windows installers, signe
 
 ## Current pilot
 
+October 20: [0.3.4](https://github.com/ingventor/valorie-school-releases/releases/tag/v0.3.4)
+is the signed opt-in updater bootstrap. [0.3.5](https://github.com/ingventor/valorie-school-releases/releases/tag/v0.3.5)
+is the strictly newer visible test target. Both are prerelease candidates only.
+0.3.4 adds a protected administrator-only stable/pilot selector and fixed GitHub
+Contents API delivery. 0.3.5 displays SCHOOL / PILOT UPDATE TEST. Existing
+verifiers/settings/recovery and permanent protection remain unchanged.
+
+The versioned signed metadata and exact installer hashes are release assets.
+Root candidate.json is the latest compatibility envelope, not an active feed.
+The 0.3.5 API package parts are installer bytes only; their reconstructed size
+and SHA-256 must match the signed release. No client credentials are needed.
+Both stable.json and pilot.json remain absent pending the master-reviewed
+bootstrap checkpoint and explicit pilot activation. Manual installation does
+not prove button-driven delivery. No automatic or fleet update is claimed.
+
+### Previous pilot
+
 [MindAlign 0.3.3](https://github.com/ingventor/valorie-school-releases/releases/tag/v0.3.3) introduces the MindAlign app name, MindAlign.exe client, matching artwork and owned-shortcut migration. Normal downloads use MindAlign-0.3.3-Setup.exe. ValorieSchool-0.3.3-Setup.exe is an IDENTICAL compatibility alias for existing updater URL validation, not another application.
 
 Both files are 171809168 bytes, SHA-256 3ea0f598f80e89262bb2785acc85134dc39067ddcaf2d16c3b7b21cf82e64e41. Revision-5 candidate-legacy.json binds the old basename accepted through 0.3.2; candidate-mindalign.json binds the new basename. Root candidate.json uses the compatibility envelope. New clients accept only these exact versioned names in this repository. Do not trust a replacement key delivered alongside a binary; verify the previously pinned key through the master handoff.
@@ -14,6 +31,6 @@ Both files are 171809168 bytes, SHA-256 3ea0f598f80e89262bb2785acc85134dc39067dd
 
 Approved clients poll stable.json hourly or on Check for updates. Only signed, versioned, exact-size/hash installers are accepted. Active teacher sessions finish before installation. Offline or rejected updates leave installed protection in place. Teacher access never disables permanent filtering.
 
-candidate.json is NOT an approved feed. stable.json is intentionally absent pending native evidence review. The channel has no per-PC rollout targeting. This candidate has NOT been automatically installed by publication, and manual installation does not prove the automatic updater.
+candidate.json is NOT an approved feed. stable.json is intentionally absent pending native evidence review. Older clients have no per-PC rollout targeting. The new pilot feed requires an explicit administrator opt-in. This candidate has NOT been automatically installed by publication, and manual installation does not prove the automatic updater.
 
 The RSA update signature is NOT Windows Authenticode publisher signing or SmartScreen reputation. IT must verify the pinned key, signature, expiry and hash, run --check-package and approve the pilot. Stop on mismatches, missing recovery or protection/audio regressions. Do not bypass an unverified publisher prompt.
